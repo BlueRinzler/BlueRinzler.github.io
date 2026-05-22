@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f111a;
+  color: #d1d5db;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #1a1d2e;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.6rem 1.5rem;
+  border: none;
+  background: #2d3143;
+  color: #a0aab4;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.tab:hover {
+  background: #3e4357;
+  color: #e2e8f0;
+}
+
+/* Controls */
+.controls {
+  margin-bottom: 1rem;
+}
+
+#search {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #374151;
+  background: #1e2233;
+  color: #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+#search::placeholder {
+  color: #6b7280;
+}
+
+/* Table container */
+.table-container {
+  display: none;
+  max-height: 600px;        /* ~20 rows */
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #2d3143;
+  background: #1a1d2e;      /* match container */
+}
+
+.table-container.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+th, td {
+  padding: 0.5rem 0.7rem;
+  text-align: right;
+  border-bottom: 1px solid #2d3143;
+}
+
+th {
+  background: #24283b;
+  color: #e2e8f0;
+  cursor: pointer;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-weight: 600;
+}
+
+th:hover {
+  background: #2f3548;
+}
+
+th::after {
+  content: ' ↕';
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+td:first-child, th:first-child {
+  text-align: left;   /* symbol, etc. */
+}
+
+tr:hover td {
+  background: #2a2f40;
+}
+
+/* Scrollbar styling (optional, for WebKit browsers) */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #1a1d2e;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #3b3f56;
+  border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #4b5069;
+}

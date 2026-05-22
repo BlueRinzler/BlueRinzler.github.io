@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Screener Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Papa Parse for CSV parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Daily Stock Screener</h1>
+
+    <!-- Tab buttons -->
+    <div class="tabs">
+      <button id="tab-consolidation" class="tab active">Consolidation</button>
+      <button id="tab-momentum" class="tab">Momentum</button>
+    </div>
+
+    <!-- Search box -->
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search all columns..." autocomplete="off">
+    </div>
+
+    <!-- Table containers -->
+    <div id="table-consolidation" class="table-container active"></div>
+    <div id="table-momentum" class="table-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+<!-- Local test loader (remove for production) -->
+  <script src="localTestLoader.js"></script>
+</body>
+</html>
