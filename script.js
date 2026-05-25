@@ -45,6 +45,11 @@ const dataStore = {
 // Current active tab
 let activeTab = 'consolidation';
 
+function updateTotalCount() {
+  const count = dataStore[activeTab]?.length || 0;
+  document.getElementById('total-count').textContent = `· total: ${count}`;
+}
+
 // ------------------------------------------------
 // Utility: Build a sortable HTML table from an array of objects
 // ------------------------------------------------
@@ -182,13 +187,19 @@ function filterTable(tableId, query) {
   });
 }
 
-// ------------------------------------------------
-// Tab switching
-// ------------------------------------------------
+// Tab switching (adjusted for new tab buttons)
 function switchTab(tabName) {
-  // Update buttons
-  document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
-  document.getElementById(`tab-${tabName}`).classList.add('active');
+  // Update tab buttons
+  document.querySelectorAll('.tabLink').forEach(btn => btn.classList.remove('tabLinkActive'));
+  const activeBtn = document.getElementById(`tab-${tabName}`);
+  if (activeBtn) {
+    activeBtn.classList.add('tabLinkActive');
+    activeBtn.setAttribute('aria-selected', 'true');
+  }
+  // Deactivate other buttons
+  document.querySelectorAll('.tabLink').forEach(btn => {
+    if (btn !== activeBtn) btn.setAttribute('aria-selected', 'false');
+  });
 
   // Update containers
   document.querySelectorAll('.table-container').forEach(div => div.classList.remove('active'));
@@ -196,12 +207,12 @@ function switchTab(tabName) {
 
   activeTab = tabName;
 
-  // Re-apply search filter to the newly visible table
+  // Re-apply search
   const searchQuery = document.getElementById('search').value;
-  if (searchQuery) {
-    filterTable(tabName, searchQuery);
-  }
+  if (searchQuery) filterTable(tabName, searchQuery);
+  updateTotalCount()
 }
+
 
 // ------------------------------------------------
 // Load CSV and store data
@@ -230,16 +241,14 @@ async function loadCSV(fileKey) {
   } catch (error) {
     console.error(`Failed to load ${fileKey}:`, error);
     // Optionally show an error message in the respective table container
-    document.getElementById(`table-${fileKey}`).innerHTML = 
+    document.getElementById(`table-${fileKey}`).innerHTML =
       `<p style="color:red">Error loading data: ${error.message}</p>`;
   }
 }
 
-// ------------------------------------------------
-// Initialisation
-// ------------------------------------------------
+// Initialization
 async function init() {
-  // Load both files concurrently
+  // Load CSV files
   await Promise.all([
     loadCSV('consolidation'),
     loadCSV('momentum')
@@ -249,21 +258,23 @@ async function init() {
   buildTable(dataStore.consolidation, 'table-consolidation');
   buildTable(dataStore.momentum, 'table-momentum');
 
-  // Set up tab button listeners
+  // Update toolbar info
+  document.getElementById('last-updated').textContent =
+      `Last updated: ${new Date().toLocaleDateString()}`;
+  updateTotalCount();
+
+  // Tab button listeners
   document.getElementById('tab-consolidation').addEventListener('click', () => switchTab('consolidation'));
   document.getElementById('tab-momentum').addEventListener('click', () => switchTab('momentum'));
 
-  // Search input handler
+  // Search input
   const searchInput = document.getElementById('search');
   searchInput.addEventListener('input', (e) => {
-    const query = e.target.value;
-    // Filter the currently active table
-    filterTable(activeTab, query);
+    filterTable(activeTab, e.target.value);
   });
 
-  // Activate default tab (consolidation already visible)
+  // Activate default tab
   switchTab('consolidation');
 }
 
-// Kick off
 init();

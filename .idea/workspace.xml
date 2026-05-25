@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6748273d-cb5b-4611-a304-b2ad9b0c39ea" name="Changes" comment="'pushed new data files">
+    <list default="true" id="6748273d-cb5b-4611-a304-b2ad9b0c39ea" name="Changes" comment="'pushed new data files'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,23 +36,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0880148831090193" />
-      <entry key="MS500" value="1.9266679279113543" />
-      <entry key="S2" value="4.132739844885059" />
-      <entry key="S5" value="5.550191737352419" />
-      <entry key="S10" value="6.210718465880597" />
-      <entry key="S30" value="6.720982199058779" />
-      <entry key="S60" value="6.858389571402945" />
-      <entry key="M2" value="6.9286606728386575" />
-      <entry key="M5" value="6.971334946893983" />
-      <entry key="M10" value="6.985645824400123" />
-      <entry key="M15" value="6.990425731611856" />
-      <entry key="M30" value="6.995210455037006" />
-      <entry key="H1" value="6.9976046244932535" />
-      <entry key="H2" value="6.9988021614486655" />
-      <entry key="H4" value="6.999401043019637" />
-      <entry key="D1" value="6.999900168599399" />
-      <entry key="W1" value="6.99998573824308" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000000000029" />
+      <entry key="S10" value="1.0000000931071802" />
+      <entry key="S30" value="1.0114705103262294" />
+      <entry key="S60" value="1.3112001807362546" />
+      <entry key="M2" value="2.9077355184418163" />
+      <entry key="M5" value="7.337745237920442" />
+      <entry key="M10" value="12.161105323319989" />
+      <entry key="M15" value="15.396918852113274" />
+      <entry key="M30" value="20.517326405035124" />
+      <entry key="H1" value="24.206901670420866" />
+      <entry key="H2" value="26.444375381410225" />
+      <entry key="H4" value="27.679411350586463" />
+      <entry key="D1" value="28.773686360480593" />
+      <entry key="W1" value="28.967513548711164" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -71,23 +74,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0588569145809372" />
-      <entry key="MS500" value="1.9163581978174902" />
-      <entry key="S2" value="4.122087368118648" />
-      <entry key="S5" value="5.54289922585214" />
-      <entry key="S10" value="6.206292028690693" />
-      <entry key="S30" value="6.719297323062108" />
-      <entry key="S60" value="6.857518366854754" />
-      <entry key="M2" value="6.9282176702587215" />
-      <entry key="M5" value="6.971155942446253" />
-      <entry key="M10" value="6.985556019301572" />
-      <entry key="M15" value="6.99036579406893" />
-      <entry key="M30" value="6.995180452483905" />
-      <entry key="H1" value="6.997589614763218" />
-      <entry key="H2" value="6.998794654469265" />
-      <entry key="H4" value="6.999397289001214" />
-      <entry key="D1" value="6.99989954285622" />
-      <entry key="W1" value="6.999985648849398" />
+      <entry key="MS100" value="0.005083366622820051" />
+      <entry key="MS500" value="0.347720492927497" />
+      <entry key="S2" value="0.7679051348510492" />
+      <entry key="S5" value="0.8997524308629553" />
+      <entry key="S10" value="0.948552901508549" />
+      <entry key="S30" value="0.9940063875976355" />
+      <entry key="S60" value="1.3022592304675917" />
+      <entry key="M2" value="2.9027838853886623" />
+      <entry key="M5" value="7.335260657282845" />
+      <entry key="M10" value="12.1596574914598" />
+      <entry key="M15" value="15.395881468017532" />
+      <entry key="M30" value="20.516758512962387" />
+      <entry key="H1" value="24.20660172518436" />
+      <entry key="H2" value="26.4442207867375" />
+      <entry key="H4" value="27.679332806906878" />
+      <entry key="D1" value="28.77367308835481" />
+      <entry key="W1" value="28.96751164813326" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -149,6 +152,8 @@
       <workItem from="1779557178029" duration="1121000" />
       <workItem from="1779559137981" duration="212000" />
       <workItem from="1779559358751" duration="2690000" />
+      <workItem from="1779735381160" duration="64000" />
+      <workItem from="1779735499637" duration="2142000" />
     </task>
     <task id="LOCAL-00001" summary="'removed localtester from index.html'">
       <option name="closed" value="true" />
@@ -182,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779559313908</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="'pushed new data files'">
+      <option name="closed" value="true" />
+      <created>1779735429513</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1779735429513</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +215,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="'removed localtester from index.html'" />
     <MESSAGE value="'pushed new data files" />
-    <option name="LAST_COMMIT_MESSAGE" value="'pushed new data files" />
+    <MESSAGE value="'pushed new data files'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'pushed new data files'" />
   </component>
 </project>

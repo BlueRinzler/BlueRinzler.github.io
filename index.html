@@ -3,32 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stock Screener Dashboard</title>
+  <title>The Big Scan </title>
   <link rel="stylesheet" href="style.css">
-  <!-- Papa Parse for CSV parsing -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Daily Stock Screener</h1>
+<!-- Top navigation (minimal) -->
+<nav class="siteTopNav" aria-label="Main">
+  <div class="siteTopNavInner">
+    <a class="siteTopNavBrand" href="#">The Big Scan</a>
+    <ul class="siteTopNavLinks">
+      <li><a class="siteTopNavLink" href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Tab buttons -->
-    <div class="tabs">
-      <button id="tab-consolidation" class="tab active">Consolidation</button>
-      <button id="tab-momentum" class="tab">Momentum</button>
+<div class="container sitePageLayout">
+  <!-- Hidden heading for screen readers -->
+  <h1 class="srOnly">Stock Screener</h1>
+
+  <!-- Description + tab row -->
+  <div class="tabExplainRow">
+    <div class="tabExplainTextWrap">
+      <p class="meta tabExplainText">
+        Consolidation and momentum scans for US equities.
+      </p>
     </div>
-
-    <!-- Search box -->
-    <div class="controls">
-      <input type="text" id="search" placeholder="Search all columns..." autocomplete="off">
+    <div class="tabExplainTabsCol">
+      <div class="tabRow" role="tablist" aria-label="watchlist toggle">
+        <button role="tab" aria-selected="true"  id="tab-consolidation" class="tabLink tabLinkActive" type="button">Consolidation</button>
+        <button role="tab" aria-selected="false" id="tab-momentum"      class="tabLink"            type="button">Momentum</button>
+      </div>
     </div>
-
-    <!-- Table containers -->
-    <div id="table-consolidation" class="table-container active"></div>
-    <div id="table-momentum" class="table-container"></div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Toolbar: last updated, total count, search, download/share -->
+  <div class="toolbarRow">
+    <div class="toolbarLeft">
+      <span class="meta" id="last-updated">Last updated: loading…</span>
+      <span class="meta" id="total-count">· total: 0</span>
+      <input type="text" id="search" placeholder="Filter…" autocomplete="off" class="searchInput">
+    </div>
+    <div class="toolbarActions">
+      <button type="button" class="actionLink" disabled>download</button>
+      <button type="button" class="actionLink" disabled>share</button>
+    </div>
+  </div>
 
+  <!-- Table wrapper with fixed height and scroll -->
+  <div class="tableWrap" style="height:calc(100vh - 260px)">
+    <div id="table-consolidation" class="table-container active"></div>
+    <div id="table-momentum"      class="table-container"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="siteFooter">
+    <div class="siteFooterLinks">
+      <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+<!-- Remove localTestLoader for production -->
+<script src="localTestLoader.js"></script>
 </body>
 </html>
